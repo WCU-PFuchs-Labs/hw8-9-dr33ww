@@ -25,10 +25,10 @@ public class GPTree implements Comparable<GPTree>, Cloneable {
             double y = row.getY();
             double pred = 0.0;
             try {
-                // rely on your existing Node.eval(double[]) implementation
+                // rely on your existing 
                 pred = root.eval(x);
             } catch (Exception e) {
-                // penalize invalid trees (e.g., divide by zero)
+                // penalize invalid trees 
                 pred = Double.NaN;
             }
             if (Double.isNaN(pred) || Double.isInfinite(pred)) {
@@ -65,14 +65,11 @@ public class GPTree implements Comparable<GPTree>, Cloneable {
 
     private Node cloneNode(Node n) {
         if (n == null) return null;
-        // we assume Node exposes: getOperation(), getLeft(), getRight(), setLeft(), setRight()
-        // and Op hierarchy supports copy via toString constructor path is unknown;
-        // so the safest way is to rebuild the node using the existing Op instance.
-        // We'll try to use n.getOperation().copy() if present; if not, fall back to reflection-free simple cases.
+    
         Op op = n.getOperation();
         Node newNode;
 
-        // try to duplicate the Op using simple rules:
+        // try to duplicate the Op using simple rules
         if (op instanceof Variable) {
             Variable v = (Variable) op;
             newNode = new Node(new Variable(v.getIndex()));
@@ -80,8 +77,7 @@ public class GPTree implements Comparable<GPTree>, Cloneable {
             Const c = (Const) op;
             newNode = new Node(new Const(c.getValue()));
         } else {
-            // assume Binop subclass; keep same operator instance (safe if Op is stateless),
-            // otherwise you may add copy() to your Op/Binop classes.
+           
             newNode = new Node(op);
         }
 
@@ -95,7 +91,7 @@ public class GPTree implements Comparable<GPTree>, Cloneable {
         return root.toString();
     }
 
-    // -------- crossover utilities (do not rely on Node internals beyond getters/setters) --------
+ 
 
     private static class NodeRef {
         public Node parent;
@@ -110,7 +106,7 @@ public class GPTree implements Comparable<GPTree>, Cloneable {
     }
 
     private NodeRef getRefAt(Node root, int targetIndex) {
-        // pre-order traversal
+        // pre order traversal
         Deque<NodeRef> stack = new ArrayDeque<NodeRef>();
         stack.push(new NodeRef(null, false, root));
         int idx = 0;

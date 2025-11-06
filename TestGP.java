@@ -11,7 +11,7 @@ public class TestGP {
         System.out.print("Enter number of independent variables: ");
         int numVars = Integer.parseInt(in.nextLine().trim());
 
-        Binop[] ops = new Binop[] { new Add(), new Subtract(), new Multiply(), new Divide() };
+        Binop[] ops = new Binop[] { new Plus(), new Minus(), new Multi(), new Divide() };
         NodeFactory factory = new NodeFactory(ops, numVars);
 
         Generation g = new Generation(500, 3, file, factory, numVars, new Random());

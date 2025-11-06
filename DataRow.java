@@ -1,4 +1,4 @@
-package tabular;
+
 //man idek
 
 public class DataRow {

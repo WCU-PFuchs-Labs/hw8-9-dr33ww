@@ -11,13 +11,8 @@ public class TestGeneration {
         System.out.print("Enter number of independent variables: ");
         int numVars = Integer.parseInt(in.nextLine().trim());
 
-        // Build your Binop[] using the operators provided in your project.
-        // Example (adjust class names if yours differ):
-        // Binop[] ops = new Binop[] { new Add(), new Subtract(), new Multiply(), new Divide() };
-        // NodeFactory factory = new NodeFactory(ops, numVars);
-
-        // Placeholder: try common names; if your classes differ, change them here.
-        Binop[] ops = new Binop[] { new Add(), new Subtract(), new Multiply(), new Divide() };
+      
+        Binop[] ops = new Binop[] { new Plus(), new Minus(), new Multi(), new Divide() };
         NodeFactory factory = new NodeFactory(ops, numVars);
 
         Generation g = new Generation(500, 3, file, factory, numVars, new Random());

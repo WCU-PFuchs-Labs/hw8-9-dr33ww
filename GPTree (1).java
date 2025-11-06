@@ -64,7 +64,7 @@ public class GPTree implements Comparable<GPTree>, Cloneable {
 
     public String toString() { return (root == null) ? "" : root.toString(); }
 
-    // -------- crossover utilities (Node getters/setters only) --------
+  
 
     private static class NodeRef {
         public Node parent;

@@ -1,3 +1,3 @@
 public interface Collector {
-    void visit(Node n);
+    void collect(Node n);
 }

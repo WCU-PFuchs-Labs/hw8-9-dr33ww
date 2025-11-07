@@ -1,4 +1,4 @@
-package binary;
+
 /**
  * Code Template Author: David G. Cooper
  * Purpose: A binary operator for Addition

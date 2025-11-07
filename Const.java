@@ -1,4 +1,4 @@
-package binary;
+
 /**
  * Code Template Author: David G. Cooper
  * Purpose: An operation class representing a constant number

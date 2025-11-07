@@ -1,8 +1,3 @@
-
-/**
- * Code Template Author: David G. Cooper
- * Purpose: Tha base class for operations
- */
-public class Op {
-
+public abstract class Op {
+    public boolean isLeaf() { return false; }
 }

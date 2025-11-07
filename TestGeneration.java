@@ -52,5 +52,13 @@ public class TestGeneration {
             g.evolve();
             g.evalAll();
         }
+        java.util.ArrayList<GPTree> top = g.getTopTen();
+System.out.print("Top Ten Fitness Values: ");
+for (int i = 0; i < Math.min(10, top.size()); i++) {
+    if (i > 0) System.out.print(", ");
+    // force dot decimal and exactly two decimals, jk dobbins pls 100 yds
+    System.out.printf(java.util.Locale.US, "%.2f", top.get(i).getFitness());
+}
+System.out.println();
     }
 }
